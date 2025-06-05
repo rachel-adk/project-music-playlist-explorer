@@ -48,12 +48,19 @@ h4{
 }
 
 .playlist:hover{
-    border:10px solid  rgb(154, 249, 238);
+    border:5px solid  rgb(154, 249, 238);
     margin:10px;
 }
 
-.playlist:click{
-    
+button{
+    background-color: #a5e2de;
+}
+button:hover{
+    border:5px solid  rgb(108, 128, 143);
+}
+
+button:clicked{
+    border:5px solid  rgb(209, 123, 194);
 }
 
 .modal {
