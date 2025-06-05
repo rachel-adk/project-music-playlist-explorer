@@ -3,7 +3,7 @@
         "playlistID": 1,
 		"playlist_name": "Lock In!",
 		"playlist_author": "life_of_a_college_student",
-		"playlist_art": "image_3",
+		"playlist_art": "assets/img/image_1.webp",
 		"songs": [
 			{
 				"song_id": "1",
@@ -37,9 +37,9 @@
 
 	{
 		"playlistID": 2,
-		"playlist_name": "Lock In!",
-		"playlist_author": "life_of_a_college_student",
-		"playlist_art": "image_3",
+		"playlist_name": "Afrobeats!",
+		"playlist_author": "timileyin",
+		"playlist_art": "assets/img/image_4.png",
 		"songs": [
 			{
 			"song_id": "1",
@@ -72,9 +72,9 @@
 
 	{
 		"playlistID": 3,
-		"playlist_name": "Lock In!",
-		"playlist_author": "life_of_a_college_student",
-		"playlist_art": "image_3",
+		"playlist_name": "Gym/Workout",
+		"playlist_author": "gym_rat",
+		"playlist_art": "assets/img/image_6.jpg",
 		"songs": [
 			{
 				"song_id": "1",
@@ -116,9 +116,9 @@
 
 	{
 		"playlistID": 4,
-		"playlist_name": "Lock In!",
-		"playlist_author": "life_of_a_college_student",
-		"playlist_art": "image_4",
+		"playlist_name": "Road Trip!",
+		"playlist_author": "marie_milton",
+		"playlist_art": "assets/img/image_7.jpeg",
 		"songs": [
 			{
 			"song_id": "21",
@@ -160,9 +160,9 @@
 
 	{
 		"playlistID": 5,
-		"playlist_name": "Lock In!",
-		"playlist_author": "life_of_a_college_student",
-		"playlist_art":"image_4" ,
+		"playlist_name": "Worship",
+		"playlist_author": "senami_",
+		"playlist_art":"assets/img/image_8.jpg" ,
 		"songs": [
 			{
 				"song_id": "28",
@@ -204,9 +204,9 @@
 
 	{
 		"playlistID": 6,
-		"playlist_name": "Lock In!",
-		"playlist_author": "life_of_a_college_student",
-		"playlist_art": "image_4.png",
+		"playlist_name": "Perfect Wedding",
+		"playlist_author": "sandyyy",
+		"playlist_art": "assets/img/image_10.jpeg",
 		"songs": [
 			{
 				"song_id": "35",
@@ -248,9 +248,9 @@
 
 	{
 		"playlistID": 7,
-		"playlist_name": "Lock In!",
-		"playlist_author": "life_of_a_college_student",
-		"playlist_art":"image_4" ,
+		"playlist_name": "Lofi",
+		"playlist_author": "lofi_lover",
+		"playlist_art":"assets/img/image_9.jpg" ,
 		"songs": [
 			{
 				"song_id": "42",
@@ -292,9 +292,9 @@
 
 	{
 		"playlistID": 8,
-		"playlist_name": "Lock In!",
-		"playlist_author": "life_of_a_college_student",
-		"playlist_art":"image_4" ,
+		"playlist_name": "Nostalgia",
+		"playlist_author": "rachel_sena",
+		"playlist_art":"assets/img/image_3.jpg" ,
 		"songs": [
 			{
 				"song_id": "49",

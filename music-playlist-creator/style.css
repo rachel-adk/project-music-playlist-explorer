@@ -40,11 +40,14 @@ h4{
     gap:20px;
     justify-content: space-around;
     margin:10px;
+    
 }
 
 .playlist{
     border-style: outset;
-    margin:9px cyan;
+    outline-style:solid;
+    outline-color:cyan;
+    border: 2px pink;
 }
 
 .playlist:hover{
