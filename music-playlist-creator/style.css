@@ -103,27 +103,34 @@ button:clicked{
 }
 .modal-overlay{
     background-color: #444C56;
-    display: none;
+    display: flex;
     left:0;
     top:0;
     width:100vw;
     height:100vh;
     justify-content: center;
     align-items: center;
-    z-index:1;
-    opacity: 0;
+    z-index:1000;
+    background-color: rgba(46, 173, 178, 0.5);
 }
 
 .modal-content{
-    width:100%;
     position: absolute;
     top:0;
     border: 2px solid cyan;
-    width: 85%;
-    opacity: 0;
+    max-width: 700px;
+    max-height:90vh;
+    border-radius:10px;
+    overflow-y: auto;
+    z-index: 1001;
+    
     
 }
 
+body.modal-open{
+    filter:blur(8px);
+    pointer-events: none;
+}
 #songs_list{
     display:flex;
     padding-right: 20px;
@@ -137,7 +144,7 @@ button:clicked{
 
 p3{
     font-style: bold;
-    align-items: right;
+    text-align: end;
 }
 .songs p{
     margin:0;

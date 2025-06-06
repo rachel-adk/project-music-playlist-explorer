@@ -62,6 +62,7 @@ function openModal(playlist) {
         modal.classList.add('modal-content');
 
         modalContent.innerHTML = `
+            <span class="close>&times;</span>
             <div class="modal-content">
                 <div id="banner">
                     <div class="header">
@@ -87,8 +88,20 @@ function openModal(playlist) {
                     
 
             modal.appendChild(modalContent);
+
+            modalContent.querySelector('.close').addEventListener('click', () => {
+                modal.classList.add('hidden');
+                document.body.classList.remove('modal-open');
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.add("hidden")
+                    document.body.classList.remove('modal-open');
+                }
+            });
+                
             const songs = playlist.songs;
-            
             function shuffleSongs(array) {
                 for (let i = array.length - 1; i > 0 ; i--) {
                     const j = Math.floor(Math.random() * (i+1));
