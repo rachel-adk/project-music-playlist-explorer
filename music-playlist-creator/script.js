@@ -157,35 +157,35 @@ function newPlaylist(){
     const songs = [];
     document.querySelectorAll(".song-input").forEach(input => {
     songs.push({
-      song_title: input.querySelector(".song-title").value,
-      song_artist: input.querySelector(".song-artist").value,
-      song_duration: input.querySelector(".song-duration").value,
-      song_art: input.querySelector(".song-art").value
+        song_title: input.querySelector(".song-title").value,
+        song_artist: input.querySelector(".song-artist").value,
+        song_duration: input.querySelector(".song-duration").value,
+        song_art: input.querySelector(".song-art").value
     });
 });
 
-  const newPlaylist = {
+    const newPlaylist = {
     playlist_name: name,
     playlist_author: author,
     playlist_art: art,
     songs: songs
-  };
+    };
 
-  displayNewPlaylist(newPlaylist);
+displayNewPlaylist(newPlaylist);
 });
 
 function displayNewPlaylist(playlist) {
     const container = document.querySelector(".playlist_cards");
     const card = document.createElement("div");
     card.classList.add("card");
-  
+
     card.innerHTML = `
-      <div class="playlist">
+    <div class="playlist">
         <img src="${playlist.playlist_art}" height="300px" width="300px">
         <h4>${playlist.playlist_name}</h4>
         <p class="p1">By: ${playlist.playlist_author}</p>
         <button onclick="clickLike(this)" data-id="user-added" data-liked="false">💗 (0)</button>
-      </div>
+    </div>
     `;
   
     container.appendChild(card);
@@ -195,32 +195,32 @@ function displayPlaylists() {
     const container = document.getElementById("playlistContainer");
     container.innerHTML = "";
     playlists.forEach((playlist, index) => {
-      const div = document.createElement("div");
-      div.className = "playlist";
-      div.innerHTML = `
+    const div = document.createElement("div");
+    div.className = "playlist";
+    div.innerHTML = `
         <img src="${playlist.playlist_art}" alt="${playlist.playlist_name}">
         <h3>${playlist.playlist_name}</h3>
         <p>By: <span class="author">${playlist.playlist_author}</span></p>
         <div class="songs">
-          ${playlist.songs.map(song => `
-            <div>
-              <strong>${song.song_title}</strong> - ${song.song_artist} (${song.song_duration})
-            </div>
-          `).join("")}
+        ${playlist.songs.map(song => `
+        <div>
+            <strong>${song.song_title}</strong> - ${song.song_artist} (${song.song_duration})
+        </div>
+        `).join("")}
         </div>
         <button onclick="toggleEdit(${index})">Edit</button>
         <button onclick="deletePlaylist(${index})">Delete</button>
         <form class="edit-form" id="edit-form-${index}" onsubmit="submitEdit(event, ${index})">
-          <input type="text" name="author" placeholder="Author" value="${playlist.playlist_author}" required>
-          <textarea name="songs" rows="4" placeholder="JSON song array">${JSON.stringify(playlist.songs, null, 2)}</textarea>
-          <button type="submit">Save</button>
+        <input type="text" name="author" placeholder="Author" value="${playlist.playlist_author}" required>
+        <textarea name="songs" rows="4" placeholder="JSON song array">${JSON.stringify(playlist.songs, null, 2)}</textarea>
+        <button type="submit">Save</button>
         </form>
-      `;
-      container.appendChild(div);
+    `;
+    container.appendChild(div);
     });
-  }
+}
 
-  function toggleEdit(index) {
+function toggleEdit(index) {
     const form = document.getElementById(`edit-form-${index}`);
     form.style.display = form.style.display === 'flex' ? 'none' : 'flex';
   }

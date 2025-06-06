@@ -38,13 +38,13 @@ body {
 h5 {
     text-align: end;
 }
-#bottom {
+/* #bottom {
     position:relative;
     padding:30px;
     background-color:rgb(173, 232, 217);
     width:100%;
     text-align: center;
-}
+} */
 p1 {
     color:rgb(219, 231, 228);
 }
@@ -123,8 +123,8 @@ button:clicked{
     background-color:rgb(77, 222, 225)
     
 }
-#modal-overlay{
-    display: none;
+.modal-overlay{
+    display:none;
     position:fixed;
     left:0;
     top:0;
@@ -132,7 +132,7 @@ button:clicked{
     height:100vh;
     justify-content: center;
     align-items: center;
-    z-index:1000;
+    z-index:1;
     background-color: rgba(0, 0, 0, 0.6);
 }
 
@@ -147,7 +147,7 @@ button:clicked{
     border-radius:10px;
     overflow-y: auto;
     z-index: 1001;
-    
+    background-color: cyan;
     
 }
 

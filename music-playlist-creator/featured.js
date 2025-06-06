@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded",() => {
                 <h3>By: ${randomPlaylists.playlist_author}</h3>
             `;
 
+            
+
             const songs = randomPlaylists.songs;
             featuredSongs.innerHTML = songs.map(song => `
                 <div class="song"> 
@@ -28,9 +30,16 @@ document.addEventListener("DOMContentLoaded",() => {
             `).join('');
 
                 });
-    
+const allBtn = document.getElementById("all-btn");
+
+allBtn.addEventListener("click", () => {
+    window.location.href = "index.html"
+});
 
 });
+    
+
+
 
 
 

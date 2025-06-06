@@ -23,3 +23,11 @@
 p{
     font-style: bold;
 }
+
+#image{
+    width:50%;
+    height:50%;
+    align-items: flex-start;
+}
+
+#ima
