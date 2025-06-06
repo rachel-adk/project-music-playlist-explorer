@@ -46,7 +46,7 @@ function cardEventListener(playlists){
     const cards = document.querySelectorAll('.card');
     cards.forEach((card, index) =>{
         card.onclick = function(e) {
-        //if (e.target.classList.contains('like-btn')) return;
+        if (e.target.classList.contains('like-btn')) return;
             
             openModal(playlists[index]);
         };
@@ -55,7 +55,8 @@ function cardEventListener(playlists){
 
     
 function openModal(playlist) {
-        const modal = document.getElementById("modal-overlay");
+        const modal = document.querySelector(".modal-overlay");
+        console.log(modal);
         modal.innerHTML = '';
 
 
@@ -63,47 +64,51 @@ function openModal(playlist) {
         modalContent.classList.add('modal-content');
 
         modalContent.innerHTML = `
-            <span class="close>&times;</span>
-                <div id="modal_banner">
-                    <div class="header">
-                        <img src="${playlist.playlist_art}" height="150px" width="200px"> 
-                        <h2>${playlist.playlist_name}</h2>
-                        <h3>by: ${playlist.playlist_author}</h3>
-                        <button class="like-btn" data-id=${playlist.song_id} data-liked="false" onclick="clickLike(this)">&#128151 (0)</button>
-                        <button id="shuffle-btn">Shuffle </button>
-                    </div>
-                    
-                    <div class="songs">
-                        <div id = "songs_list">
-                            ${playlist.songs.map(song => `
-                                <div class="info">
-                                    <img src="${song.song_art}" height="200px" width="200px">
-                                    <p>Title: ${song.song_title}</p>
-                                    <p>Artist: ${song.song_artist}</p>
-                                    <p>Duration: ${song.song_duration}</p>
-                                </div>
-                            `).join('')}
-                        </div>
+            <span id="close_btn">close;</span>
+            <div id="modal_banner">
+                <div id="header">
+                    <img src="${playlist.playlist_art}" height="150px" width="200px"> 
+                    <h2>${playlist.playlist_name}</h2>
+                    <h3>by: ${playlist.playlist_author}</h3>
+                </div>
+                <div class="button">
+                    <button class="like-btn" data-id=${playlist.song_id} data-liked="false" onclick="clickLike(this)">&#128151 (0)</button>
+                    <button id="shuffle-btn">Shuffle </button>
+                </div>
+
+
+                <div class="songs">
+                    <div id = "songs_list">
+                        ${playlist.songs.map(song => `
+                            <div class="info">
+                                <img src="${song.song_art}" height="200px" width="200px">
+                                <p>Title: ${song.song_title}</p>
+                                <p>Artist: ${song.song_artist}</p>
+                                <p>Duration: ${song.song_duration}</p>
+                            </div>
+                        `).join('')}
                     </div>
                 </div>
-            `;
+            </div>
+            
+        `;
                     
 
             modal.appendChild(modalContent);
             modal.classList.add('show');
-            document.body.classList.add('modal-open');
+            //document.body.classList.add('modal-open');
 
             document.getElementById("banner").style.filter = 'blur(10px)';
             document.getElementById("bottom").style.filter = 'blur(10px)';
 
-            modalContent.querySelector('.close').addEventListener('click', () => {
+            document.getElementById('close_btn').addEventListener('click', () => {
+                console.log("close");
                 closeModal();
             });
 
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
+            document.getElementById('header').addEventListener('click', () => {
+                //if (e.target === modal) {
                     closeModal();
-                }
             });
             
             
@@ -187,13 +192,12 @@ function displayNewPlaylist(playlist) {
         <button onclick="clickLike(this)" data-id="user-added" data-liked="false">💗 (0)</button>
     </div>
     `;
-  
     container.appendChild(card);
 }
 
 function displayPlaylists() {
     const container = document.getElementById("playlistContainer");
-    container.innerHTML = "";
+    container.innerHTML = '';
     playlists.forEach((playlist, index) => {
     const div = document.createElement("div");
     div.className = "playlist";
@@ -223,34 +227,34 @@ function displayPlaylists() {
 function toggleEdit(index) {
     const form = document.getElementById(`edit-form-${index}`);
     form.style.display = form.style.display === 'flex' ? 'none' : 'flex';
-  }
+}
 
-  function deletePlaylist(index) {
+function deletePlaylist(index) {
     if (confirm("Are you sure you want to delete this playlist?")) {
-      playlists.splice(index, 1);
-      displayPlaylists();
+        playlists.splice(index, 1);
+    displayPlaylists();
     }
-  }
+}
 
-  function submitEdit(event, index) {
+function submitEdit(event, index) {
     event.preventDefault();
     const form = event.target;
     const newAuthor = form.author.value;
     let newSongs;
     try {
-      newSongs = JSON.parse(form.songs.value);
-      playlists[index].playlist_author = newAuthor;
-      playlists[index].songs = newSongs;
-      displayPlaylists();
-    } catch (e) {
-      alert("Invalid song JSON format.");
+        newSongs = JSON.parse(form.songs.value);
+        playlists[index].playlist_author = newAuthor;
+        playlists[index].songs = newSongs;
+        displayPlaylists();
+        } catch (e) {
+        alert("Invalid song JSON format.");
+        }
     }
-  }
 
-  document.addEventListener("DOMContentLoaded", displayPlaylists);
+document.addEventListener("DOMContentLoaded", displayPlaylists);
 
 function closeModal(){
-    const modal = document.getElementById("modal-overlay")
+    const modal = document.querySelector(".modal-overlay")
     modal.classList.remove('show');
     document.body.classList.remove('modal-open');
 

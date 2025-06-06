@@ -120,7 +120,7 @@ button:clicked{
     width:50%;
     height:50%;
     overflow:auto;
-    background-color:rgb(77, 222, 225)
+    background-color:cyan;
     
 }
 .modal-overlay{
@@ -136,7 +136,7 @@ button:clicked{
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-#modal-overlay.show{
+.modal-overlay.show{
     display: flex;
 }
 
