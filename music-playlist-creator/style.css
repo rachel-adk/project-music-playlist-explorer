@@ -5,6 +5,28 @@ body {
     background-color: #444C56;
 }
 
+.nav-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+
+}
+
+.nav-buttons button {
+    background-color: #b3d8d7;
+    color: #222;
+    padding: 8px 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.nav-buttons button:hover {
+    border: 3px solid rgb(108, 128, 143);
+}
+
 #banner {
     padding: 10px;
     margin: auto;
@@ -17,11 +39,11 @@ h5 {
     text-align: end;
 }
 #bottom {
-    bottom:0;
-    position:fixed;
+    padding:10px;
+    position:relative;
     background-color:rgb(173, 232, 217);
     width:100%;
-    height:min-height;
+    text-align: center;
 }
 p1 {
     color:rgb(219, 231, 228);

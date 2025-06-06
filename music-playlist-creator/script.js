@@ -77,7 +77,7 @@ function openModal(playlist) {
                         <div id = "songs_list">
                             ${playlist.songs.map(song => `
                                 <div class="info">
-                                    <img src="${song.song_art}" height="200px" width="200px"
+                                    <img src="${song.song_art}" height="200px" width="200px">
                                     <p>Title: ${song.song_title}</p>
                                     <p>Artist: ${song.song_artist}</p>
                                     <p>Duration: ${song.song_duration}</p>
@@ -93,9 +93,8 @@ function openModal(playlist) {
             modal.classList.add('show');
             document.body.classList.add('modal-open');
 
-            document.querySelector('main').style.filter = 'blur(10px)';
-            document.querySelector('header').style.filter = 'blur(10px)';
-            document.querySelector('#bottom').style.filter = 'blur(10px)';
+            document.getElementById("banner").style.filter = 'blur(10px)';
+            document.getElementById("bottom").style.filter = 'blur(10px)';
 
             modalContent.querySelector('.close').addEventListener('click', () => {
                 closeModal();
@@ -148,6 +147,15 @@ function closeModal(){
 
 }
 
+document.getElementById('all-btn').addEventListener('click', () =>  {
+    window.location.href = index.html
+
+});
+
+document.getElementById('featured-btn').addEventListener('click', () => {
+    window.location.href = featured.html
+
+});
 let lastLikeId = 0;
 function clickLike(button) {
 const reviewId = button.getAttribute("data-id");
