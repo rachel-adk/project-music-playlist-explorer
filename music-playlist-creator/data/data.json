@@ -1,336 +1,440 @@
-[
-    {
-        "playlistID": 1,
-		"playlist_name": "Lock In!",
-		"playlist_author": "life_of_a_college_student",
-		"playlist_art": "assets/img/image_1.webp",
-		"songs": [
-			{
-				"song_id": "1",
-				"song_artist": "Noah",
-				"song_title": "Sunrise Melody"
-			},
-			{
-				"song_id": "2",
-				"song_artist": "Ella",
-				"song_title": "Midnight Echo"
-			},
-			{
-				"song_id": "3",
-				"song_artist": "Liam",
-				"song_title": "Waves of Time"
-			},
-			{
-				"song_id": "4",
-				"song_artist": "Sophia",
-				"song_title": "Starlit Dreams"
+{
+	"playlists" : 
+	[
+		{
+			"playlistID": 1,
+			"playlist_name": "Lock In!",
+			"playlist_author": "life_of_a_college_student",
+			"playlist_art": "assets/img/image_1.webp",
+			"songs": [
+				{
+					"song_id": "1",
+					"song_artist": "Noah",
+					"song_title": "Sunrise Melody",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:12"
+				},
+				{
+					"song_id": "2",
+					"song_artist": "Ella",
+					"song_title": "Midnight Echo",
+					"song_art": "assets/img/song.png",
+					"song_duration": "2:58"
+				},
+				{
+					"song_id": "3",
+					"song_artist": "Liam",
+					"song_title": "Waves of Time",
+					"song_art": "assets/img/song.png",
+					"song_duration": "4:01"
+				},
+				{
+					"song_id": "4",
+					"song_artist": "Sophia",
+					"song_title": "Starlit Dreams",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:45"
+				},
+				{
+					"song_id": "5",
+					"song_artist": "Jackson",
+					"song_title": "Golden Horizon",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:27"
+				}
+	                ]
+		},
 
-			},
-			{
-				"song_id": "5",
-				"song_artist": "Jackson",
-				"song_title": "Golden Horizon"
+		{
+			"playlistID": 2,
+			"playlist_name": "Afrobeats!",
+			"playlist_author": "timileyin",
+			"playlist_art": "assets/img/image_4.png",
+			"songs": 
+			[
+				{
+					"song_id": "1",
+					"song_artist": "Ava Thompson",
+					"song_title": "Electric Summer",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:31"
+				},
+				{
+					"song_id": "2",
+					"song_artist": "Miles Carter",
+					"song_title": "Shadows in Bloom",
+					"song_art": "assets/img/song.png",
+					"song_duration": "4:20"
+				},
+				{
+					"song_id": "3",
+					"song_artist": "Lily Adams",
+					"song_title": "Neon Horizon",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:09"
+				},
+				{
+					"song_id": "4",
+					"song_artist": "Julian Rivera",
+					"song_title": "Glass Rain",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:58"
+				},
+				{
+					"song_id": "5",
+					"song_artist": "Zoe Mitchell",
+					"song_title": "Parallel Hearts",
+					"song_art": "assets/img/song.png",
+					"song_duration": "4:14"
+				}
+			]
+		},
 
-			}
-		]
-    },
+		{
+			"playlistID": 3,
+			"playlist_name": "Gym/Workout",
+			"playlist_author": "gym_rat",
+			"playlist_art": "assets/img/image_6.jpg",
+			"songs": 
+			[
+				{
+					"song_id": "1",
+					"song_artist": "Camila Rhodes",
+					"song_title": "Golden Silence",
+					"song_art": "assets/img/song.png",
+					"song_duration": "4:05"
+				},
+				{
+					"song_id": "2",
+					"song_artist": "Jasper Knight",
+					"song_title": "Drift Away",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:33"
+				},
+				{
+					"song_id": "3",
+					"song_artist": "Talia Monroe",
+					"song_title": "Burn the Sky",
+					"song_art": "assets/img/song.png",
+					"song_duration": "4:15"
+				},
+				{
+					"song_id": "4",
+					"song_artist": "Ezra Sinclair",
+					"song_title": "Falling Static",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:17"
+				},
+				{
+					"song_id": "5",
+					"song_artist": "Nora Chandler",
+					"song_title": "Whispers Between",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:54"
+				},
+				{
+					"song_id": "6",
+					"song_artist": "Silas Dean",
+					"song_title": "Runaway Code",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:38"
+				},
+				{
+					"song_id": "7",
+					"song_artist": "Lena Foster",
+					"song_title": "Crimson Trail",
+					"song_art": "assets/img/song.png",
+					"song_duration": "2:49"
+				}
+			]
+		},
 
-	{
-		"playlistID": 2,
-		"playlist_name": "Afrobeats!",
-		"playlist_author": "timileyin",
-		"playlist_art": "assets/img/image_4.png",
-		"songs": [
-			{
-			"song_id": "1",
-			"song_artist": "Ava Thompson",
-			"song_title": "Electric Summer"
-			},
-			{
-				"song_id": "2",
-				"song_artist": "Miles Carter",
-				"song_title": "Shadows in Bloom"
-			},
-			{
-				"song_id": "3",
-				"song_artist": "Lily Adams",
-				"song_title": "Neon Horizon"
-			},
-			{
-				"song_id": "4",
-				"song_artist": "Julian Rivera",
-				"song_title": "Glass Rain"
-			},
-			{
-			"song_id": "5",
-			"song_artist": "Zoe Mitchell",
-			"song_title": "Parallel Hearts"
-			}
+		{
+			"playlistID": 4,
+			"playlist_name": "Road Trip!",
+			"playlist_author": "marie_milton",
+			"playlist_art": "assets/img/image_7.jpeg",
+			"songs": 
+			[
+				{
+					"song_id": "21",
+					"song_artist": "Wren Holloway",
+					"song_title": "Echo Shore",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:26"
+				},
+				{
+					"song_id": "22",
+					"song_artist": "Milo Easton",
+					"song_title": "Crystal Fuse",
+					"song_art": "assets/img/song.png",
+					"song_duration": "4:09"
+				},
+				{
+					"song_id": "23",
+					"song_artist": "Sage Whitman",
+					"song_title": "Velvet Frequency",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:50"
+				},
+				{
+					"song_id": "24",
+					"song_artist": "Nova Barrett",
+					"song_title": "Electric Wild",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:43"
+				},
+				{
+					"song_id": "25",
+					"song_artist": "Phoenix Alcott",
+					"song_title": "Through the Haze",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:59"
+				},
+				{
+					"song_id": "26",
+					"song_artist": "Iris McAllister",
+					"song_title": "Lightborne",
+					"song_art": "assets/img/song.png",
+					"song_duration": "2:53"
+				},
+				{
+					"song_id": "27",
+					"song_artist": "Kieran Black",
+					"song_title": "Dream Circuit",
+					"song_art": "assets/img/song.png",
+					"song_duration": "4:02"
+				}
+			]
+		},
 
-		]
-	},
+		{
+			"playlistID": 5,
+			"playlist_name": "Worship",
+			"playlist_author": "senami_",
+			"playlist_art": "assets/img/image_8.jpg",
+			"songs": 
+			[
+				{
+					"song_id": "28",
+					"song_artist": "Selene Marlowe",
+					"song_title": "Frozen Pulse",
+					"song_art": "assets/img/song.png",
+					"song_duration": "4:18"
+				},
+				{
+					"song_id": "29",
+					"song_artist": "Dante Hollow",
+					"song_title": "Skyline Reverie",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:42"
+				},
+				{
+					"song_id": "30",
+					"song_artist": "Lyra Caldwell",
+					"song_title": "Mirrored Light",
+					"song_art": "assets/img/song.png",
+					"song_duration": "4:30"
+				},
+				{
+					"song_id": "31",
+					"song_artist": "Axel Monroe",
+					"song_title": "Pulse and Flame",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:44"
+				},
+				{
+					"song_id": "32",
+					"song_artist": "Elara Quinn",
+					"song_title": "Cloud Ritual",
+					"song_art": "assets/img/song.png",
+					"song_duration": "2:59"
+				},
+				{
+					"song_id": "33",
+					"song_artist": "Juno Callahan",
+					"song_title": "Hollow Frame",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:25"
+				},
+				{
+					"song_id": "34",
+					"song_artist": "Reed Langston",
+					"song_title": "Voltage Bloom",
+					"song_art": "assets/img/song.png",
+					"song_duration": "4:11"
+				}
+			]
+		},
 
-	{
-		"playlistID": 3,
-		"playlist_name": "Gym/Workout",
-		"playlist_author": "gym_rat",
-		"playlist_art": "assets/img/image_6.jpg",
-		"songs": [
-			{
-				"song_id": "1",
-				"song_artist": "Camila Rhodes",
-				"song_title": "Golden Silence"
-			},
-			{
-				"song_id": "2",
-				"song_artist": "Jasper Knight",
-				"song_title": "Drift Away"
-			},
-			{
-				"song_id": "3",
-				"song_artist": "Talia Monroe",
-				"song_title": "Burn the Sky"
-			},
-			{
-				"song_id": "4",
-				"song_artist": "Ezra Sinclair",
-				"song_title": "Falling Static"
-			},
-			{
-				"song_id": "5",
-				"song_artist": "Nora Chandler",
-				"song_title": "Whispers Between"
-			},
-			{
-				"song_id": "6",
-				"song_artist": "Silas Dean",
-				"song_title": "Runaway Code"
-			},
-			{
-				"song_id": "7",
-				"song_artist": "Lena Foster",
-			"song_title": "Crimson Trail"
-			}
-		]
-	},
+		{
+			"playlistID": 6,
+			"playlist_name": "Perfect Wedding",
+			"playlist_author": "sandyyy",
+			"playlist_art": "assets/img/image_10.jpeg",
+			"songs": 
+			[
+				{
+					"song_id": "35",
+					"song_artist": "Cassian Wolfe",
+					"song_title": "Glass Mirage",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:21"
+				},
+				{
+					"song_id": "36",
+					"song_artist": "Mae Whitlock",
+					"song_title": "Echoes in Amber",
+					"song_art": "assets/img/song.png",
+					"song_duration": "4:39"
+				},
+				{
+					"song_id": "37",
+					"song_artist": "Jett Rowley",
+					"song_title": "Signal Horizon",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:13"
+				},
+				{
+					"song_id": "38",
+					"song_artist": "Ivy Lennox",
+					"song_title": "Twilight Signal",
+					"song_art": "assets/img/song.png",
+					"song_duration": "4:04"
+				},
+				{
+					"song_id": "39",
+					"song_artist": "Callum Reyes",
+					"song_title": "Crystalline Veins",
+					"song_art": "assets/img/song.png",
+					"song_duration": "2:51"
+				},
+				{
+					"song_id": "40",
+					"song_artist": "Sasha Myles",
+					"song_title": "Lunar Bloom",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:56"
+				},
+				{
+					"song_id": "41",
+					"song_artist": "Beck Arden",
+					"song_title": "Fragmented Realms",
+					"song_art": "assets/img/song.png",
+					"song_duration": "4:22"
+				}
+			]
+		},
 
-	{
-		"playlistID": 4,
-		"playlist_name": "Road Trip!",
-		"playlist_author": "marie_milton",
-		"playlist_art": "assets/img/image_7.jpeg",
-		"songs": [
-			{
-			"song_id": "21",
-			"song_artist": "Wren Holloway",
-			"song_title": "Echo Shore"
+		{
+			"playlistID": 7,
+			"playlist_name": "Lofi",
+			"playlist_author": "lofi_lover",
+			"playlist_art": "assets/img/image_9.jpg",
+			"songs": 
+			[
+				{
+					"song_id": "42",
+					"song_artist": "Zara Whitmore",
+					"song_title": "Breath of Neon",
+					"song_art": "assets/img/song.png",
+					"song_duration": "2:47"
+				},
+				{
+					"song_id": "43",
+					"song_artist": "Theo Maddox",
+					"song_title": "Night Circuit",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:19"
+				},
+				{
+					"song_id": "44",
+					"song_artist": "Lena Drayton",
+					"song_title": "Subtle Collapse",
+					"song_art": "assets/img/song.png",
+					"song_duration": "4:08"
+				},
+				{
+					"song_id": "45",
+					"song_artist": "Nico Ferrell",
+					"song_title": "Digital Glow",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:46"
+				},
+				{
+					"song_id": "46",
+					"song_artist": "Rowan Vale",
+					"song_title": "The Fifth Signal",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:37"
+				},
+				{
+					"song_id": "47",
+					"song_artist": "Mira Sloan",
+					"song_title": "Ashes and Waves",
+					"song_art": "assets/img/song.png",
+					"song_duration": "3:02"
+				},
+				{
+					"song_id": "48",
+					"song_artist": "Kade Hollow",
+					"song_title": "Neon Spires",
+					"song_art": "assets/img/song.png",
+					"song_duration": "4:12"
+				}
+			]
 		},
 		{
-			"song_id": "22",
-			"song_artist": "Milo Easton",
-			"song_title": "Crystal Fuse"
-		},
-		{
-			"song_id": "23",
-			"song_artist": "Sage Whitman",
-			"song_title": "Velvet Frequency"
-		},
-		{
-			"song_id": "24",
-			"song_artist": "Nova Barrett",
-			"song_title": "Electric Wild"
-		},
-		{
-			"song_id": "25",
-			"song_artist": "Phoenix Alcott",
-			"song_title": "Through the Haze"
-		},
-		{
-			"song_id": "26",
-			"song_artist": "Iris McAllister",
-			"song_title": "Lightborne"
-		},
-		{
-			"song_id": "27",
-			"song_artist": "Kieran Black",
-			"song_title": "Dream Circuit"
-		}
-		]
-	},
-
-	{
-		"playlistID": 5,
-		"playlist_name": "Worship",
-		"playlist_author": "senami_",
-		"playlist_art":"assets/img/image_8.jpg" ,
-		"songs": [
-			{
-				"song_id": "28",
-				"song_artist": "Selene Marlowe",
-				"song_title": "Frozen Pulse"
-			},
-			{
-				"song_id": "29",
-				"song_artist": "Dante Hollow",
-				"song_title": "Skyline Reverie"
-			},
-			{
-				"song_id": "30",
-				"song_artist": "Lyra Caldwell",
-				"song_title": "Mirrored Light"
-			},
-			{
-				"song_id": "31",
-				"song_artist": "Axel Monroe",
-				"song_title": "Pulse and Flame"
-			},
-			{
-				"song_id": "32",
-				"song_artist": "Elara Quinn",
-				"song_title": "Cloud Ritual"
-			},
-			{
-				"song_id": "33",
-				"song_artist": "Juno Callahan",
-				"song_title": "Hollow Frame"
-			},
-			{
-				"song_id": "34",
-				"song_artist": "Reed Langston",
-				"song_title": "Voltage Bloom"
-			}
-		]
-	},
-
-	{
-		"playlistID": 6,
-		"playlist_name": "Perfect Wedding",
-		"playlist_author": "sandyyy",
-		"playlist_art": "assets/img/image_10.jpeg",
-		"songs": [
-			{
-				"song_id": "35",
-				"song_artist": "Cassian Wolfe",
-				"song_title": "Glass Mirage"
-			},
-			{
-				"song_id": "36",
-				"song_artist": "Mae Whitlock",
-				"song_title": "Echoes in Amber"
-			},
-			{
-				"song_id": "37",
-				"song_artist": "Jett Rowley",
-				"song_title": "Signal Horizon"
-			},
-			{
-				"song_id": "38",
-				"song_artist": "Ivy Lennox",
-				"song_title": "Twilight Signal"
-			},
-			{
-				"song_id": "39",
-				"song_artist": "Callum Reyes",
-				"song_title": "Crystalline Veins"
-			},
-			{
-				"song_id": "40",
-				"song_artist": "Sasha Myles",
-				"song_title": "Lunar Bloom"
-			},
-			{
-				"song_id": "41",
-				"song_artist": "Beck Arden",
-				"song_title": "Fragmented Realms"
-			}
-		]
-	},
-
-	{
-		"playlistID": 7,
-		"playlist_name": "Lofi",
-		"playlist_author": "lofi_lover",
-		"playlist_art":"assets/img/image_9.jpg" ,
-		"songs": [
-			{
-				"song_id": "42",
-				"song_artist": "Zara Whitmore",
-				"song_title": "Breath of Neon"
-			},
-			{
-				"song_id": "43",
-				"song_artist": "Theo Maddox",
-				"song_title": "Night Circuit"
-			},
-			{
-				"song_id": "44",
-				"song_artist": "Lena Drayton",
-				"song_title": "Subtle Collapse"
-			},
-			{
-				"song_id": "45",
-				"song_artist": "Nico Ferrell",
-				"song_title": "Digital Glow"
-			},
-			{
-				"song_id": "46",
-				"song_artist": "Rowan Vale",
-				"song_title": "The Fifth Signal"
-			},
-			{
-				"song_id": "47",
-				"song_artist": "Mira Sloan",
-				"song_title": "Ashes and Waves"
-			},
-			{
-				"song_id": "48",
-				"song_artist": "Kade Hollow",
-				"song_title": "Neon Spires"
-			}
-		]
-	},
-
-	{
 		"playlistID": 8,
 		"playlist_name": "Nostalgia",
 		"playlist_author": "rachel_sena",
-		"playlist_art":"assets/img/image_3.jpg" ,
+		"playlist_art": "assets/img/image_3.jpg",
 		"songs": [
-			{
-				"song_id": "49",
-				"song_artist": "Ember Castillo",
-				"song_title": "Orbit Fade"
-			},
-			{
-				"song_id": "50",
-				"song_artist": "Malik Anders",
-				"song_title": "Iron Refrain"
-			},
-			{
-				"song_id": "51",
-				"song_artist": "Tessa Ward",
-				"song_title": "Nocturne Drive"
-			},
-			{
-				"song_id": "52",
-				"song_artist": "Declan Royce",
-				"song_title": "Fractured Code"
-			},
-			{
-				"song_id": "53",
-				"song_artist": "Indira Lowe",
-				"song_title": "Electric Lace"
-			},
-			{
-				"song_id": "54",
-				"song_artist": "Elias Hart",
-				"song_title": "Crimson Fadeout"
-			},
-			{
-				"song_id": "55",
-				"song_artist": "Kaia Mercer",
-				"song_title": "Shifting Echoes"
-			}
-		]
-	}
-]
+		{
+			"song_id": "49",
+			"song_artist": "Ember Castillo",
+			"song_art": "assets/img/song.png",
+			"song_title": "Orbit Fade"
+		},
+		{
+			"song_id": "50",
+			"song_artist": "Malik Anders",
+			"song_art": "assets/img/song.png",
+			"song_title": "Iron Refrain"
+		},
+		{
+			"song_id": "51",
+			"song_artist": "Tessa Ward",
+			"song_art": "assets/img/song.png",
+			"song_title": "Nocturne Drive"
+		},
+		{
+			"song_id": "52",
+			"song_artist": "Declan Royce",
+			"song_art": "assets/img/song.png",
+			"song_title": "Fractured Code"
+		},
+		{
+			"song_id": "53",
+			"song_artist": "Indira Lowe",
+			"song_art": "assets/img/song.png",
+			"song_title": "Electric Lace"
+		},
+		{
+			"song_id": "54",
+			"song_artist": "Elias Hart",
+			"song_art": "assets/img/song.png",
+			"song_title": "Crimson Fadeout"
+		},
+		{
+			"song_id": "55",
+			"song_artist": "Kaia Mercer",
+			"song_art": "assets/img/song.png",
+			"song_title": "Shifting Echoes"
+		}
+	]
+}
+
+	]
+	        
+}

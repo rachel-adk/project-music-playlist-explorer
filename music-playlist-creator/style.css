@@ -12,6 +12,9 @@ body {
     text-align:center;
 }
 
+h5{
+    text-align: end;
+}
 #bottom{
     bottom:0;
     position:fixed;
@@ -32,6 +35,18 @@ h4{
     color:rgb(219, 231, 228);
 }
 
+shuffle{
+    background-color: #444C56;
+
+}
+
+shuffle:hover{
+    border:5px solid  rgb(207, 142, 208);
+}
+
+shuffle:clicked{
+    border:5px solid  rgb(140, 22, 120);
+}
 .playlist_cards{
     display:flex;
     padding-right: 20px;
@@ -43,11 +58,19 @@ h4{
     
 }
 
+.banner{
+    position: sticky;
+}
 .playlist{
     border-style: outset;
-    outline-style:solid;
+    outline-style: groove;
     outline-color:cyan;
-    border: 2px pink;
+    border: 4px pink;
+    border-radius: 15px;
+    
+}
+.playlist img{
+    border-radius: 15px;
 }
 
 .playlist:hover{
@@ -56,7 +79,7 @@ h4{
 }
 
 button{
-    background-color: #a5e2de;
+    background-color:  #444C56;
 }
 button:hover{
     border:5px solid  rgb(108, 128, 143);
@@ -67,11 +90,10 @@ button:clicked{
 }
 
 .modal {
-    display: flex;
-    position:fixed;
+    display: none;
     z-index:1;
     left:0;
-    top:0;
+    top:20%;
     width:100%;
     height:100%;
     overflow:auto;
@@ -80,6 +102,13 @@ button:clicked{
 }
 .modal-overlay{
     background-color: #444C56;
+    display: none;
+    z-index:1;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    overflow:auto;
 }
 .songs{
     background-color: #444C56;
@@ -89,12 +118,15 @@ button:clicked{
 }
 .modal-content{
     width:100%;
-    background-color: #738294;
-    margin:10% auto;
-    padding:15px;
+    position: absolute;
+    top:0;
     border: 2px solid cyan;
-    width: 75%;
+    width: 85%;
     
+}
+
+.hidden{
+    display: none;
 }
 
 .info{

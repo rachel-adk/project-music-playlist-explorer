@@ -1,72 +1,105 @@
-fetch('data/data.json')
-.then(response => response.json())
-.then(data=> {
-playlistCards(data);
-})
+function playlistCards() {
 
-.catch(error => {
-    console.error('An error occurred', error)
-});
+    fetch('data/data.json')
+    .then(response => response.json())
+    .then(data=> {
+    
+        const playlists = data.playlists
+        const cards = document.querySelector(".playlist_cards");
+        cards.innerHTML='';
+
+        if (!data) {
+            cards.innerHTML = `<p>The playlist is empty</p>`;
+        }
+
+        playlists.forEach((playlist) => {
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            card.innerHTML = `
+                <div class="playlist">
+                    <img src=${playlist.playlist_art} height="300px" width="300px">
+                    <h4>${playlist.playlist_name}</h4>
+                    <p1>By: ${playlist.playlist_author}</p1>
+                    <p class="playlist"></p>
+                    <button
+                        onclick="clickLike(this)"
+                        data-id=${data.id}
+                        data-liked=false>
+                        &#128151(0)
+
+                    </button>
+                </div>
+                `;
+
+                cards.appendChild(card);
+
+            });
 
 
-function playlistCards(data) {
-    const parentContainer = document.querySelector(".playlist_cards");
-    parentContainer.innerHTML="";
+            cardEventListener(playlists);
+                
+            })}
 
-    if (!data) {
-        parentContainer.innerHTML = `<p>The playlist is empty</p>`;
-    }
+// function shuffleEventListener(){
+//     co
+// }
 
-    data.forEach((element) => {
-        const card = document.createElement('div');
-        card.classList.add('card');
 
-        card.innerHTML = `
-            <img src=${element.playlist_art} height="300px" width="300px>
-            <div class="playlist">
-            <h4>${element.playlist_name}</h4>
-            <p1>By: ${element.playlist_author}</p1>
-            <p class="playlist"></p>
-            <button
-                onclick="clickLike(this)"
-                data-id="${data.id}"
-                data-liked=false>
-                &#128151(0)
-
-            </button>
-            </div>
-            `;
-            
-        parentContainer.appendChild(card)
-
-        
-    });
-
+function shuffleArray(songs){
+    
 }
 
-    const modal = document.getElementByClassName("modal-overlay");
-    const span = document.getElementsByClassName("close")[0];
+function cardEventListener(playlists){
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card, index) =>{
+        card.onclick = function(e) {
+           // if (e.target.classList.contains('like-btn')) return;
+            
+            openModal(playlists[index]);
+        };
+    });
+}
 
-    function openModal(playlist) {
-        document.getElementById('banner').innerText = playlist.name;
-        document.getElementById('song_image').src = playlist.imageUrl;
-        document.getElementById('festivalDates').innerText = `Dates: ${festival.dates}`;
-        document.getElementById('festivalLocation').innerText = `Location: ${festival.location}`;
-        document.getElementById('artistLineup').innerHTML = `<strong>Lineup:</strong> ${festival.lineup.join(', ')}`;
-        modal.style.display = "block";
-    }
+    
+function openModal(playlist) {
+        const modal = document.getElementById("modal-overlay hidden");
 
-    span.onclick = function() {
-    modal.style.display = "none";
-    }
-    window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-    }
 
-let lastLikeId = 0;
-function clickLike(button) {
+        const modalContent = document.createElement('div');
+        modal.classList.add('modal-content');
+
+        modalContent.innerHTML = `
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="banner">
+                    <div class="header">
+                        <img src=${playlist.playlist_art} height="100px";width="100px"> 
+                        <h2>${playlist.playlist_name}</h2>
+                        <h3>${playlist.playlist_author}</h3>
+                        <button class="like-btn" data-id=${playlist.song_id} data-liked="false" onclick="clickLike(this)">&#128151 (0)</button>
+                        <button id="shuffle" Shuffle </button>
+                    </div>
+                    
+                <div class="songs">
+                    
+                    <div class="info">
+                        <img id="song_image" src=${playlist.song_art} height="200px" width="200px"> 
+                        <p>${playlist.songs.song_title}</p>
+                        <p>${playlist.songs.song_artist}</p>
+                        <p>${playlist.songs.song_duration}</p>
+                    </div>
+
+                `;
+
+            modal.appendChild(modalContent);
+            //modal.remove("hidden");// remove hidden for modal to show 
+            }
+            
+
+
+    let lastLikeId = 0;
+    function clickLike(button) {
     const reviewId = button.getAttribute("data-id");
     const isLiked = button.getAttribute("data-liked") === "true";
     let likesCount = parseInt(button.textContent.match(/\d+/)[0], 10);
@@ -80,4 +113,20 @@ function clickLike(button) {
         button.textContent = ` 💗(${likesCount})`;
         button.setAttribute("data-liked", "true")
     }
+
+
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    playlistCards();
+})
+
+
+//modal
+const hiddenModal = document.querySelector(".modal-overlay");
+hiddenModal.addEventListener("click",(event) =>{
+if (event.target === hiddenModal) {
+        hiddenModal.classList.add("hidden");
+    }
+});
