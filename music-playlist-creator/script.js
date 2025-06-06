@@ -4,15 +4,15 @@ function playlistCards() {
     .then(response => response.json())
     .then(data=> {
     
-        const playlists = data.playlists
+        const mainPlaylists = data.playlists
         const cards = document.querySelector(".playlist_cards");
         cards.innerHTML='';
 
-        if (!data || data.length === 0) {
+        if (!mainPlaylists || mainPlaylists.length === 0) {
             cards.innerHTML = `<p>The playlist is empty</p>`;
         }
 
-        playlists.forEach((playlist) => {
+        mainPlaylists.forEach((playlist) => {
             const card = document.createElement('div');
             card.classList.add('card');
 
@@ -24,20 +24,21 @@ function playlistCards() {
                     <p class="playlist"></p>
                     <button
                         onclick="clickLike(this)"
-                        data-id=${data.id}
+                        data-id=${playlist.playlistID}
                         data-liked=false>
                         &#128151(0)
 
                     </button>
                 </div>
                 `;
-
+            
+            cards.innerHTML='';
             cards.appendChild(card);
 
             });
 
 
-            cardEventListener(playlists);
+            cardEventListener(mainPlaylists);
                 
             })}
 
@@ -46,7 +47,7 @@ function cardEventListener(playlists){
     const cards = document.querySelectorAll('.card');
     cards.forEach((card, index) =>{
         card.onclick = function(e) {
-           // if (e.target.classList.contains('like-btn')) return;
+        //if (e.target.classList.contains('like-btn')) return;
             
             openModal(playlists[index]);
         };
@@ -63,10 +64,9 @@ function openModal(playlist) {
 
         modalContent.innerHTML = `
             <div class="modal-content">
-                <span class="close">&times;</span>
                 <div id="banner">
                     <div class="header">
-                        <img src=${playlist.playlist_art} height="100px";width="100px"> 
+                        <img src=${playlist.playlist_art} height="100px" width="100px"> 
                         <h2>${playlist.playlist_name}</h2>
                         <h3>${playlist.playlist_author}</h3>
                         <button class="like-btn" data-id=${playlist.song_id} data-liked="false" onclick="clickLike(this)">&#128151 (0)</button>
@@ -85,37 +85,38 @@ function openModal(playlist) {
                 `;
 
             modal.appendChild(modalContent);
-            //modal.remove("hidden");// remove hidden for modal to show 
-            }
-            
-    function shuffleSongs(array) {
-        for (let i = array.length - 1; i > 0 ; i--) {
-            const j = Math.floor(Math.random() * (i+1));
-            [array[i], array[j]] = [array[j], array[i]]
-        }
-        return array;
+            const songs = playlist.songs;
+            function shuffleSongs(array) {
+                for (let i = array.length - 1; i > 0 ; i--) {
+                    const j = Math.floor(Math.random() * (i+1));
+                    [array[i], array[j]] = [array[j], array[i]]
+                    document.getElementById("shuffle-btn").addEventListener("click", () => {
+                    const shuffledSongs = shuffleSongs(songs);
+
+                }); 
     }
-    document.getElementById("shuttle-btn").addEventListener("click", () => {
-        const shuffledSongs = shuffleSongs([playlists.songs]);
+    return array;
+}
+            modalContent.querySelector(".close").addEventListener("click", () => {
+                modal.classList.add("hidden")
+            })
+}
 
-    });
+let lastLikeId = 0;
+function clickLike(button) {
+const reviewId = button.getAttribute("data-id");
+const isLiked = button.getAttribute("data-liked") === "true";
+let likesCount = parseInt(button.textContent.match(/\d+/)[0], 10);
 
-    let lastLikeId = 0;
-    function clickLike(button) {
-    const reviewId = button.getAttribute("data-id");
-    const isLiked = button.getAttribute("data-liked") === "true";
-    let likesCount = parseInt(button.textContent.match(/\d+/)[0], 10);
-
-    if (isLiked) {
-        likesCount -= 1;
-        button.textContent =`💗 (${likesCount})`;
-        button.setAttribute(`data-liked`, "true");
-    } else {
-        likesCount += 1;
-        button.textContent = ` 💗(${likesCount})`;
-        button.setAttribute("data-liked", "true")
-    }
-
+if (isLiked) {
+    likesCount -= 1;
+    button.textContent =`💗 (${likesCount})`;
+    button.setAttribute("data-liked", "false");
+} else {
+    likesCount += 1;
+    button.textContent = ` 💗(${likesCount})`;
+    button.setAttribute("data-liked", "true")
+}
 
 }
 
@@ -125,10 +126,3 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
-// //modal
-// const hiddenModal = document.querySelector(".modal-overlay");
-// hiddenModal.addEventListener("click",(event) =>{
-// if (event.target === hiddenModal) {
-//         hiddenModal.classList.add("hidden");
-//     }
-// });
