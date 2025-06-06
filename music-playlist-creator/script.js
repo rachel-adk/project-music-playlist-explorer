@@ -20,7 +20,7 @@ function playlistCards() {
                 <div class="playlist">
                     <img src=${playlist.playlist_art} height="300px" width="300px">
                     <h4>${playlist.playlist_name}</h4>
-                    <p1>By: ${playlist.playlist_author}</p1>
+                    <p>By: ${playlist.playlist_author}</p>
                     <p class="playlist"></p>
                     <button
                         onclick="clickLike(this)"
@@ -64,7 +64,7 @@ function openModal(playlist) {
 
         modalContent.innerHTML = `
             <span class="close>&times;</span>
-                <div id="banner">
+                <div id="modal_banner">
                     <div class="header">
                         <img src="${playlist.playlist_art}" height="150px" width="200px"> 
                         <h2>${playlist.playlist_name}</h2>
@@ -145,9 +145,110 @@ function newPlaylist(){
         `;
         songs_container.appendChild(song);
     });
+};
 
-    document.getElementById("newPlaylist")
+    document.getElementById("newPlaylist").addEventListener("submit", (e) => {
+        e.preventDefault();
+
+    const name = document.getElementById("playlist-name").value;
+    const author = document.getElementById("playlist-author").value;
+    const art = document.getElementById("playlist-art").value;
+
+    const songs = [];
+    document.querySelectorAll(".song-input").forEach(input => {
+    songs.push({
+      song_title: input.querySelector(".song-title").value,
+      song_artist: input.querySelector(".song-artist").value,
+      song_duration: input.querySelector(".song-duration").value,
+      song_art: input.querySelector(".song-art").value
+    });
+});
+
+  const newPlaylist = {
+    playlist_name: name,
+    playlist_author: author,
+    playlist_art: art,
+    songs: songs
+  };
+
+  displayNewPlaylist(newPlaylist);
+});
+
+function displayNewPlaylist(playlist) {
+    const container = document.querySelector(".playlist_cards");
+    const card = document.createElement("div");
+    card.classList.add("card");
+  
+    card.innerHTML = `
+      <div class="playlist">
+        <img src="${playlist.playlist_art}" height="300px" width="300px">
+        <h4>${playlist.playlist_name}</h4>
+        <p class="p1">By: ${playlist.playlist_author}</p>
+        <button onclick="clickLike(this)" data-id="user-added" data-liked="false">💗 (0)</button>
+      </div>
+    `;
+  
+    container.appendChild(card);
 }
+
+function displayPlaylists() {
+    const container = document.getElementById("playlistContainer");
+    container.innerHTML = "";
+    playlists.forEach((playlist, index) => {
+      const div = document.createElement("div");
+      div.className = "playlist";
+      div.innerHTML = `
+        <img src="${playlist.playlist_art}" alt="${playlist.playlist_name}">
+        <h3>${playlist.playlist_name}</h3>
+        <p>By: <span class="author">${playlist.playlist_author}</span></p>
+        <div class="songs">
+          ${playlist.songs.map(song => `
+            <div>
+              <strong>${song.song_title}</strong> - ${song.song_artist} (${song.song_duration})
+            </div>
+          `).join("")}
+        </div>
+        <button onclick="toggleEdit(${index})">Edit</button>
+        <button onclick="deletePlaylist(${index})">Delete</button>
+        <form class="edit-form" id="edit-form-${index}" onsubmit="submitEdit(event, ${index})">
+          <input type="text" name="author" placeholder="Author" value="${playlist.playlist_author}" required>
+          <textarea name="songs" rows="4" placeholder="JSON song array">${JSON.stringify(playlist.songs, null, 2)}</textarea>
+          <button type="submit">Save</button>
+        </form>
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  function toggleEdit(index) {
+    const form = document.getElementById(`edit-form-${index}`);
+    form.style.display = form.style.display === 'flex' ? 'none' : 'flex';
+  }
+
+  function deletePlaylist(index) {
+    if (confirm("Are you sure you want to delete this playlist?")) {
+      playlists.splice(index, 1);
+      displayPlaylists();
+    }
+  }
+
+  function submitEdit(event, index) {
+    event.preventDefault();
+    const form = event.target;
+    const newAuthor = form.author.value;
+    let newSongs;
+    try {
+      newSongs = JSON.parse(form.songs.value);
+      playlists[index].playlist_author = newAuthor;
+      playlists[index].songs = newSongs;
+      displayPlaylists();
+    } catch (e) {
+      alert("Invalid song JSON format.");
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", displayPlaylists);
+
 function closeModal(){
     const modal = document.getElementById("modal-overlay")
     modal.classList.remove('show');

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded",() => {
         .then(data=> {
     
             const featured = data.playlists;
-            const randomPlaylists = playlists[Math.floor(Math.random() * featured.length)];
+            const randomPlaylists = featured[Math.floor(Math.random() * featured.length)];
             
 
             const featuredContainer = document.getElementById("featuredContainer");
