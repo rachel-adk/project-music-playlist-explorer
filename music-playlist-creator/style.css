@@ -102,8 +102,8 @@ button:clicked{
     
 }
 .modal-overlay{
-    background-color: #444C56;
-    display: flex;
+    display: none;
+    position:fixed;
     left:0;
     top:0;
     width:100vw;
@@ -111,14 +111,16 @@ button:clicked{
     justify-content: center;
     align-items: center;
     z-index:1000;
-    background-color: rgba(46, 173, 178, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-overlay.show{
+    display: flex;
 }
 
 .modal-content{
-    position: absolute;
-    top:0;
-    border: 2px solid cyan;
-    max-width: 700px;
+    position: relative;
+    padding:15px;
     max-height:90vh;
     border-radius:10px;
     overflow-y: auto;

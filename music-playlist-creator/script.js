@@ -56,50 +56,58 @@ function cardEventListener(playlists){
     
 function openModal(playlist) {
         const modal = document.getElementById("modal-overlay");
+        modal.innerHTML = '';
 
 
         const modalContent = document.createElement('div');
-        modal.classList.add('modal-content');
+        modalContent.classList.add('modal-content');
 
         modalContent.innerHTML = `
             <span class="close>&times;</span>
-            <div class="modal-content">
                 <div id="banner">
                     <div class="header">
-                        <img src=${playlist.playlist_art} height="150px" width="200px"> 
+                        <img src="${playlist.playlist_art}" height="150px" width="200px"> 
                         <h2>${playlist.playlist_name}</h2>
                         <h3>by: ${playlist.playlist_author}</h3>
                         <button class="like-btn" data-id=${playlist.song_id} data-liked="false" onclick="clickLike(this)">&#128151 (0)</button>
                         <button id="shuffle-btn">Shuffle </button>
                     </div>
                     
-                <div class="songs">
-                    <div id = "songs_list">
-                    ${playlist.songs.map(song => `
-                        <div class="info">
-                            <img src="${song.song_art}" height="200px" width="200px"
-                            <p>Title: ${song.song_title}</p>
-                            <p>Artist: ${song.song_artist}</p>
-                            <p>Duration: ${song.song_duration}</p>
+                    <div class="songs">
+                        <div id = "songs_list">
+                            ${playlist.songs.map(song => `
+                                <div class="info">
+                                    <img src="${song.song_art}" height="200px" width="200px"
+                                    <p>Title: ${song.song_title}</p>
+                                    <p>Artist: ${song.song_artist}</p>
+                                    <p>Duration: ${song.song_duration}</p>
+                                </div>
+                            `).join('')}
                         </div>
-                        `).join('')}
+                    </div>
                 </div>
-                `;
+            `;
                     
 
             modal.appendChild(modalContent);
+            modal.classList.add('show');
+            document.body.classList.add('modal-open');
+
+            document.querySelector('main').style.filter = 'blur(10px)';
+            document.querySelector('header').style.filter = 'blur(10px)';
+            document.querySelector('#bottom').style.filter = 'blur(10px)';
 
             modalContent.querySelector('.close').addEventListener('click', () => {
-                modal.classList.add('hidden');
-                document.body.classList.remove('modal-open');
+                closeModal();
             });
 
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
-                    modal.classList.add("hidden")
-                    document.body.classList.remove('modal-open');
+                    closeModal();
                 }
             });
+            
+            
                 
             const songs = playlist.songs;
             function shuffleSongs(array) {
@@ -126,6 +134,19 @@ function openModal(playlist) {
             
             
         }
+
+function closeModal(){
+    const modal = document.getElementById("modal-overlay")
+    modal.classList.remove('show');
+    document.body.classList.remove('modal-open');
+
+    document.querySelector('main').style.filter = 'none';
+    document.querySelector('header').style.filter = 'none';
+    document.querySelector('#bottom').style.filter = 'none';
+
+    modal.innerHTML='';
+
+}
 
 let lastLikeId = 0;
 function clickLike(button) {
