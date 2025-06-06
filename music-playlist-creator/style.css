@@ -4,7 +4,8 @@ body {
     padding: 0;
     background-color: #444C56;
 }
-#banner{
+
+#banner {
     padding: 10px;
     margin: auto;
     border-style:double;
@@ -12,42 +13,42 @@ body {
     text-align:center;
 }
 
-h5{
+h5 {
     text-align: end;
 }
-#bottom{
+#bottom {
     bottom:0;
     position:fixed;
     background-color:rgb(173, 232, 217);
     width:100%;
     height:min-height;
 }
-p1{
+p1 {
     color:rgb(219, 231, 228);
 }
 
-h2{
+h2 {
     color:rgb(219, 231, 228);
 }
 
-h4{
+h4 {
     text-align: justify;
     color:rgb(219, 231, 228);
 }
 
-shuffle{
+shuffle-btn {
     background-color: #444C56;
 
 }
 
-shuffle:hover{
+shuffle-btn:hover {
     border:5px solid  rgb(207, 142, 208);
 }
 
-shuffle:clicked{
+shuffle-btn:clicked {
     border:5px solid  rgb(140, 22, 120);
 }
-.playlist_cards{
+.playlist_cards {
     display:flex;
     padding-right: 20px;
     flex-direction: row;
@@ -90,7 +91,7 @@ button:clicked{
 }
 
 .modal {
-    display: none;
+    display: flex;
     z-index:1;
     left:0;
     top:20%;
@@ -125,9 +126,6 @@ button:clicked{
     
 }
 
-.hidden{
-    display: none;
-}
 
 .info{
     display:flex;

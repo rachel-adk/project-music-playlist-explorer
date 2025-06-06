@@ -8,7 +8,7 @@ function playlistCards() {
         const cards = document.querySelector(".playlist_cards");
         cards.innerHTML='';
 
-        if (!data) {
+        if (!data || data.length === 0) {
             cards.innerHTML = `<p>The playlist is empty</p>`;
         }
 
@@ -32,7 +32,7 @@ function playlistCards() {
                 </div>
                 `;
 
-                cards.appendChild(card);
+            cards.appendChild(card);
 
             });
 
@@ -41,14 +41,6 @@ function playlistCards() {
                 
             })}
 
-// function shuffleEventListener(){
-//     co
-// }
-
-
-function shuffleArray(songs){
-    
-}
 
 function cardEventListener(playlists){
     const cards = document.querySelectorAll('.card');
@@ -63,7 +55,7 @@ function cardEventListener(playlists){
 
     
 function openModal(playlist) {
-        const modal = document.getElementById("modal-overlay hidden");
+        const modal = document.getElementById("modal-overlay");
 
 
         const modalContent = document.createElement('div');
@@ -78,7 +70,7 @@ function openModal(playlist) {
                         <h2>${playlist.playlist_name}</h2>
                         <h3>${playlist.playlist_author}</h3>
                         <button class="like-btn" data-id=${playlist.song_id} data-liked="false" onclick="clickLike(this)">&#128151 (0)</button>
-                        <button id="shuffle" Shuffle </button>
+                        <button id="shuffle-btn">Shuffle </button>
                     </div>
                     
                 <div class="songs">
@@ -96,7 +88,17 @@ function openModal(playlist) {
             //modal.remove("hidden");// remove hidden for modal to show 
             }
             
+    function shuffleSongs(array) {
+        for (let i = array.length - 1; i > 0 ; i--) {
+            const j = Math.floor(Math.random() * (i+1));
+            [array[i], array[j]] = [array[j], array[i]]
+        }
+        return array;
+    }
+    document.getElementById("shuttle-btn").addEventListener("click", () => {
+        const shuffledSongs = shuffleSongs([playlists.songs]);
 
+    });
 
     let lastLikeId = 0;
     function clickLike(button) {
@@ -123,10 +125,10 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
-//modal
-const hiddenModal = document.querySelector(".modal-overlay");
-hiddenModal.addEventListener("click",(event) =>{
-if (event.target === hiddenModal) {
-        hiddenModal.classList.add("hidden");
-    }
-});
+// //modal
+// const hiddenModal = document.querySelector(".modal-overlay");
+// hiddenModal.addEventListener("click",(event) =>{
+// if (event.target === hiddenModal) {
+//         hiddenModal.classList.add("hidden");
+//     }
+// });
