@@ -1,15 +1,15 @@
-.image{
+#image{
     border-radius: 15px;
     align-items: flex-start;
 }
 
-.featuredContainer{
+#featuredContainer{
     display: flex;
     flex-flow: row wrap;
 
 }
 
-.songs{
+#songs{
     display:flex;
     padding-right: 20px;
     flex-direction: row;

@@ -82,7 +82,27 @@
             </div> -->
 
         </div>
-    
+        <section id="newPlaylist">
+            <h2>Create a new playlist</h2>
+            <form id="createPlaylist">
+                <label>Playlist Name: <input type="text" id="playlist_name" required></label>><br>
+                <label> Author: <input type="text" id="playlist_author" required></label>><br>
+                
+                <h3>Add Songs</h3>
+                <div id="songs_container">
+                    <div class="song_input">
+                        <label>Title: <input type="text" id="song_title" required></label><br>
+                        <label>Artist : <input type="text" id="artist_name" required></label><br>
+                        <label>Duration: <input type="text" id="duration" required></label><br>
+                    </div>
+                </div>
+
+                <button type="button" id="new_song">Add another song</button><br><br>
+                <button type="submit" id="new_song">Create Playlist</button><br><br>
+                
+
+            </form>
+        </section>
     </main>
 
         <div id="modal-overlay">

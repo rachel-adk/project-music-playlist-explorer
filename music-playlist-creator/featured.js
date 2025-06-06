@@ -1,10 +1,10 @@
-document.addEventListener("DOMContentLoades",() => {
+document.addEventListener("DOMContentLoaded",() => {
     fetch('data/data.json')
         .then(response => response.json())
         .then(data=> {
     
             const featured = data.playlists;
-            const randomPlaylists = playlists[Math.floor(Math.random() * playlists.length)];
+            const randomPlaylists = playlists[Math.floor(Math.random() * featured.length)];
             
 
             const featuredContainer = document.getElementById("featuredContainer");
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoades",() => {
             const featuredSongs = document.getElementById("songs");
 
             featuredImage.innerHTML=`
-                <img src="${randomPlaylists.playlist_art}>
+                <img src="${randomPlaylists.playlist_art}" alt="Featured Playlist Art">
                 <h2>${randomPlaylists.playlist_name}</h2>
                 <h3>By: ${randomPlaylists.playlist_author}</h3>
             `;
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoades",() => {
             `).join('');
 
                 });
-    document.getElementById("featured").innerHTML = indexFile;
+    
 
 });
 

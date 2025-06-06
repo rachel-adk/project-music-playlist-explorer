@@ -133,7 +133,21 @@ function openModal(playlist) {
             
             
         }
+function newPlaylist(){
+    document.getElementById("add-song").addEventListener("click", () => {
+        const songs_container = document.getElementById("songs_container");
+        const song = document.createElement("div");
+        song.classList.add("song");
+        song.innerHTML= `
+            label>Title: <input type="text" id="song_title" required></label>
+            <label>Artist : <input type="text" id="artist_name" required></label>
+            <label>Duration: <input type="text" id="duration" required></label>
+        `;
+        songs_container.appendChild(song);
+    });
 
+    document.getElementById("newPlaylist")
+}
 function closeModal(){
     const modal = document.getElementById("modal-overlay")
     modal.classList.remove('show');
@@ -148,12 +162,12 @@ function closeModal(){
 }
 
 document.getElementById('all-btn').addEventListener('click', () =>  {
-    window.location.href = index.html
+    window.location.href = "index.html";
 
 });
 
 document.getElementById('featured-btn').addEventListener('click', () => {
-    window.location.href = featured.html
+    window.location.href = "featured.html";
 
 });
 let lastLikeId = 0;
