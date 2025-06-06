@@ -1,0 +1,25 @@
+.image{
+    border-radius: 15px;
+    align-items: flex-start;
+}
+
+.featuredContainer{
+    display: flex;
+    flex-flow: row wrap;
+
+}
+
+.songs{
+    display:flex;
+    padding-right: 20px;
+    flex-direction: row;
+    flex-flow: row wrap;
+    gap:20px;
+    justify-content: space-around;
+    margin:10px;
+    align-items: flex-end;
+}
+
+p{
+    font-style: bold;
+}

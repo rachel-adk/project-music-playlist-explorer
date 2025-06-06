@@ -32,7 +32,6 @@ function playlistCards() {
                 </div>
                 `;
             
-            cards.innerHTML='';
             cards.appendChild(card);
 
             });
@@ -66,41 +65,54 @@ function openModal(playlist) {
             <div class="modal-content">
                 <div id="banner">
                     <div class="header">
-                        <img src=${playlist.playlist_art} height="100px" width="100px"> 
+                        <img src=${playlist.playlist_art} height="150px" width="200px"> 
                         <h2>${playlist.playlist_name}</h2>
-                        <h3>${playlist.playlist_author}</h3>
+                        <h3>by: ${playlist.playlist_author}</h3>
                         <button class="like-btn" data-id=${playlist.song_id} data-liked="false" onclick="clickLike(this)">&#128151 (0)</button>
                         <button id="shuffle-btn">Shuffle </button>
                     </div>
                     
                 <div class="songs">
-                    
-                    <div class="info">
-                        <img id="song_image" src=${playlist.song_art} height="200px" width="200px"> 
-                        <p>${playlist.songs.song_title}</p>
-                        <p>${playlist.songs.song_artist}</p>
-                        <p>${playlist.songs.song_duration}</p>
-                    </div>
-
+                    <div id = "songs_list">
+                    ${playlist.songs.map(song => `
+                        <div class="info">
+                            <img src="${song.song_art}" height="200px" width="200px"
+                            <p>Title: ${song.song_title}</p>
+                            <p>Artist: ${song.song_artist}</p>
+                            <p>Duration: ${song.song_duration}</p>
+                        </div>
+                        `).join('')}
+                </div>
                 `;
+                    
 
             modal.appendChild(modalContent);
             const songs = playlist.songs;
+            
             function shuffleSongs(array) {
                 for (let i = array.length - 1; i > 0 ; i--) {
                     const j = Math.floor(Math.random() * (i+1));
                     [array[i], array[j]] = [array[j], array[i]]
+                }
+                return array;
+            }
                     document.getElementById("shuffle-btn").addEventListener("click", () => {
                     const shuffledSongs = shuffleSongs(songs);
-
+                    const songList = modal.querySelector("#songs_list");
+                    songList.innerHTML = shuffledSongs.map(song => `
+                        <div class = "info">
+                            <img src="${song.song_art}" height="200px" width="200px">
+                            <p>Title: ${song.song_title}</p>
+                            <p>Artist: ${song.song_artist}</p>
+                            <p>Duration: ${song.song_duration}</p>
+                        </div>
+                        `).join('');
                 }); 
-    }
-    return array;
-}
-            modalContent.querySelector(".close").addEventListener("click", () => {
-                modal.classList.add("hidden")
-            })
-}
+    
+
+            
+            
+        }
 
 let lastLikeId = 0;
 function clickLike(button) {
@@ -110,19 +122,18 @@ let likesCount = parseInt(button.textContent.match(/\d+/)[0], 10);
 
 if (isLiked) {
     likesCount -= 1;
-    button.textContent =`💗 (${likesCount})`;
+    button.textContent = `💗 (${likesCount})`;
     button.setAttribute("data-liked", "false");
 } else {
     likesCount += 1;
-    button.textContent = ` 💗(${likesCount})`;
+    button.textContent =  `💗(${likesCount})`;
     button.setAttribute("data-liked", "true")
 }
-
 }
+
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
     playlistCards();
-})
-
-
+});
