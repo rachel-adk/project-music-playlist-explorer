@@ -157,39 +157,7 @@ function displayPlaylists() {
         `;
         container.appendChild(div);
     })
-    div.addEventListener("click", () => {      
-        modal.appendChild();
-        const delete_btn = card.querySelector(".delete-btn");
-        delete_btn.addEventListener("click",(e) => {
-            e.stopPropagation();
-            card.remove();
-        });
-    })
     
-    const editBtn = div.querySelector(".edit-form");
-    editBtn.addEventListener("click",(e) => {
-        e.stopPropagation();
-
-        document.getElementById("playlist_name").value = playlist.playlist_name;
-        document.getElementById("playlist_author").value = playlist.playlist_author;
-
-        const songsContainer = document.getElementById("list_of_songs");
-        list_of_songs.innerHTML ="";
-
-        playlist.songs.forEach(song=>{
-            const songInput = document.createElement("div");
-            songInput.className = "song";
-            songInput.innerHTML = `
-
-            <input class="title" value="${song.song_title}" />
-            <input class="song-artist" value="${song.song_artist}" /> 
-            <input class="duration" value="${song.song_duration}" />   
-            `;
-            list_of_songs.appendChild(songInput);
-        });
-        editingPlaylist = playlist;
-
-    })
 }
 
 function closeModal(){
