@@ -1,4 +1,7 @@
-document.addEventListener("DOMContentLoaded",() => {
+const allBtn = document.getElementById("all-btn");
+const featureBtn = document.getElementById("feature-btn");
+
+document.addEventListener("DOMContentLoaded", () => {
     fetch('data/data.json')
         .then(response => response.json())
         .then(data=> {
@@ -28,15 +31,22 @@ document.addEventListener("DOMContentLoaded",() => {
                     <p>Duration: ${song.song_duration}</p>
                 </div>
             `).join('');
+        });
 
-                });
-const allBtn = document.getElementById("all-btn");
+});
+
 
 allBtn.addEventListener("click", () => {
     window.location.href = "index.html"
 });
 
+featureBtn.addEventListener("click", () => {
+    window.location.href = "featured.html"
 });
+
+
+
+
     
 
 

@@ -17,136 +17,37 @@
         
         <div class="nav-btn">
             <button id = "all-btn">All</button>
-            <button id="featured-btn">Featured</button>
+           <button> <a style="text-decoration: none;" href="featured.html">Featured</a> </button>  
         </div>
         
+        <form id="newPlaylist">
+            <h4>Create Your New Playlist</h4>
+            <input type="text" id="playlist_name" name="playlist_name" placeholder="New Playlist Name" required/>
+            <input type="text" id="playlist_author" name="playlist_author" placeholder="Author of Playlist" required/>
+            <div id="list_of_songs">
+                <div class="song">
+                    <input type="text" placeholder="Title" class="song_title" required/>
+                    <input type="text" placeholder="Artist" class="song_artist" required/>
+                    <input type="text" placeholder="Duration" class="duration" required/>
+            </div>   
+            </div>
+            <button type="button" id="add-song-btn"> Add New Song</button>
+            <button type="submit" id="add-song-btn"> Add Playlist</button>
+        </form>
+        </div>
     </header>
 
     <main> 
         <div class="playlist_cards">
-            <!-- <div class="playlist">
-                <img src="assets/img/image_3.jpg" height="300px" width="300px">
-                <h4>Nostalgia</h4>
-                <p>By:rachel_sena</p>
-
-            </div>
-
-            <div class="playlist">
-                <img src="assets/img/image_1.webp" height="300px" width="300px">
-                <h4>Lock In!</h4>
-                <p>By: life_of_a_college_student</p>
-                <button> &#128151 </button>
-
-            </div>
-
-            <div class="playlist">
-                <img src="assets/img/image_4.png" height="300px" width="300px"> 
-                <h4>Afrobeats</h4>
-                <p>By: timileyin</p>
-                <button> &#128151 </button>
-            </div>
-
-            <div class="playlist">
-                <img src="assets/img/image_6.jpg" height="300px" width="300px"> 
-                <h4>Gym/Workout</h4>
-                <p>By: gym_rat</p>
-                <button> &#128151 </button>
-            </div>
-
-            <div class="playlist">
-                <img src="assets/img/image_7.jpeg" height="300px" width="300px"> 
-                <h4>Road Trip!</h4>
-                <p>By: marie_milton</p>
-                <button> &#128151 </button>
-            </div>
-
-            <div class="playlist">
-                <img src="assets/img/image_8.jpg" height="300px" width="300px"> 
-                <h4>Worship Time</h4>
-                <p>By: senami_</p>
-                <button> &#128151 </button>
-            </div>
-
-            <div class="playlist">
-                <img src="assets/img/image_9.jpg" height="300px" width="300px"> 
-                <h4>Lofi</h4>
-                <p>By: lofi_lover</p>
-                <button> &#128151 </button>
-            </div>
-
-            <div class="playlist">
-                <img src="assets/img/image_10.jpeg" height="300px" width="300px"> 
-                <h4>Perfect Wedding</h4>
-                <p>By: sandyyy</p>
-                <button> &#128151 </button>
-            </div> -->
-
-        </div>
-        <section id="newPlaylist">
-            <h2>Create a new playlist</h2>
-            <form id="createPlaylist">
-                <label>Playlist Name: <input type="text" id="playlist_name" required></label>><br>
-                <label> Author: <input type="text" id="playlist_author" required></label>><br>
-                
-                <h3>Add Songs</h3>
-                <div id="songs_container">
-                    <div class="song_input">
-                        <label>Title: <input type="text" id="song_title" required></label><br>
-                        <label>Artist : <input type="text" id="artist_name" required></label><br>
-                        <label>Duration: <input type="text" id="duration" required></label><br>
-                    </div>
-                </div>
-
-                <button type="button" id="new_song">Add another song</button><br><br>
-                <button type="submit" id="new_song">Create Playlist</button><br><br>
-                
-
-            </form>
+        
         </section>
     </main>
 
         <div class="modal-overlay">
             <div class="modal-content">
-                <!-- <div id="banner">
-                    <div class="header">
-                    <img id="playlist_image" src="assets/img/song.png" height="100px" width="100px"> 
-                    <h2>Playlist Title</h2>
-                    <h3>Artist's Name</h3>
-                    <button class="like-btn" data-id=`${data_id}` data-liked="false" onclick="clickLike(this)">&#128151 (0)</button>
-                    </div>
-                <div class="songs">
-                    
-                    <div class="info">
-                        <img id="song_image" src="assets/img/song.png" height="200px" width="200px"> 
-                        <p>Song Title</p>
-                        <p>Artist Name</p>
-                        <p>Album Name</p>
-                    </div>
-                <div class="songs">
-                    <img id="song_image" src="assets/img/song.png" height="200px" width="200px"> 
-                    <div class="info">
-                        <p>Song Title</p>
-                        <p>Artist Name</p>
-                        <p>Album Name</p>
-                    </div>
-                <div class="songs">
-                    <img id="song_image" src="assets/img/song.png" height="200px" width="200px"> 
-                    <div class="info">
-                        <p>Song Title</p>
-                        <p>Artist Name</p>
-                        <p>Album Name</p>
-                    </div>
-                        
-                    </div>
-                </div>
-
-        </div>
-        </div> -->
+                
         </div>
     </div>
-
-    
-
     <span footer id="bottom">
         
     </span footer>

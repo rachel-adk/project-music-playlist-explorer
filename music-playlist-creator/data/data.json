@@ -6,6 +6,7 @@
 			"playlist_name": "Lock In!",
 			"playlist_author": "life_of_a_college_student",
 			"playlist_art": "assets/img/image_1.webp",
+			"likesCount":900,
 			"songs": [
 				{
 					"song_id": "1",
@@ -50,6 +51,7 @@
 			"playlist_name": "Afrobeats!",
 			"playlist_author": "timileyin",
 			"playlist_art": "assets/img/image_4.png",
+			"likesCount": 900,
 			"songs": 
 			[
 				{
@@ -95,6 +97,7 @@
 			"playlist_name": "Gym/Workout",
 			"playlist_author": "gym_rat",
 			"playlist_art": "assets/img/image_6.jpg",
+			"likesCount":0,
 			"songs": 
 			[
 				{
@@ -154,6 +157,7 @@
 			"playlist_name": "Road Trip!",
 			"playlist_author": "marie_milton",
 			"playlist_art": "assets/img/image_7.jpeg",
+			"likesCount":20,
 			"songs": 
 			[
 				{
@@ -213,6 +217,7 @@
 			"playlist_name": "Worship",
 			"playlist_author": "senami_",
 			"playlist_art": "assets/img/image_8.jpg",
+			"likesCount":100000,
 			"songs": 
 			[
 				{
@@ -272,6 +277,7 @@
 			"playlist_name": "Perfect Wedding",
 			"playlist_author": "sandyyy",
 			"playlist_art": "assets/img/image_10.jpeg",
+			"likesCount":1,
 			"songs": 
 			[
 				{
@@ -331,6 +337,7 @@
 			"playlist_name": "Lofi",
 			"playlist_author": "lofi_lover",
 			"playlist_art": "assets/img/image_9.jpg",
+			"likesCount":0,
 			"songs": 
 			[
 				{
@@ -389,52 +396,60 @@
 		"playlist_name": "Nostalgia",
 		"playlist_author": "rachel_sena",
 		"playlist_art": "assets/img/image_3.jpg",
+		"likesCount":100,
 		"songs": [
 		{
 			"song_id": "49",
 			"song_artist": "Ember Castillo",
 			"song_art": "assets/img/song.png",
-			"song_title": "Orbit Fade"
+			"song_title": "Orbit Fade",
+			"song_duration": "4:12"
 		},
 		{
 			"song_id": "50",
 			"song_artist": "Malik Anders",
 			"song_art": "assets/img/song.png",
-			"song_title": "Iron Refrain"
+			"song_title": "Iron Refrain",
+			"song_duration": "3:12"
 		},
 		{
 			"song_id": "51",
 			"song_artist": "Tessa Ward",
 			"song_art": "assets/img/song.png",
-			"song_title": "Nocturne Drive"
+			"song_title": "Nocturne Drive",
+			"song_duration": "8:02"
 		},
 		{
 			"song_id": "52",
 			"song_artist": "Declan Royce",
 			"song_art": "assets/img/song.png",
-			"song_title": "Fractured Code"
+			"song_title": "Fractured Code",
+			"song_duration": "5:12"
 		},
 		{
 			"song_id": "53",
 			"song_artist": "Indira Lowe",
 			"song_art": "assets/img/song.png",
-			"song_title": "Electric Lace"
+			"song_title": "Electric Lace",
+			"song_duration": "4:00"
 		},
 		{
 			"song_id": "54",
 			"song_artist": "Elias Hart",
 			"song_art": "assets/img/song.png",
-			"song_title": "Crimson Fadeout"
+			"song_title": "Crimson Fadeout",
+			"song_duration": "4:42"
 		},
 		{
 			"song_id": "55",
 			"song_artist": "Kaia Mercer",
 			"song_art": "assets/img/song.png",
-			"song_title": "Shifting Echoes"
+			"song_title": "Shifting Echoes",
+			"song_duration": "3:52"
 		}
 	]
 }
 
 	]
-	        
+
 }
